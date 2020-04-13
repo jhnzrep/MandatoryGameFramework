@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MandatoryGameFrameWork.Abstracts
+﻿namespace MandatoryGameFrameWork
 {
-    class AbsFood
+    class AbsFood : AbsItem
     {
+        public int HpValue { get; }
     }
 }

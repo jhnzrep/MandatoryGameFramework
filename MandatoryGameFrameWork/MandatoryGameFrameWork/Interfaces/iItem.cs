@@ -1,6 +1,6 @@
-﻿namespace MandatoryGame
+﻿namespace MandatoryGameFrameWork
 {
-    public interface iGameObject
+    public interface iItem
     {
         public int Id { get; set; }
         public int PosX { get; set; }

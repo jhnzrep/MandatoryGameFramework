@@ -1,12 +1,11 @@
-﻿using System.Threading;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace MandatoryGameFrameWork
 {
-    public abstract class AbsItem : iItem
+    public interface iEntity
     {
-        protected static int id = 0;
-        protected static Mutex idMutex = new Mutex();
-
         public int Id { get; set; }
         public int PosX { get; set; }
         public int PosY { get; set; }

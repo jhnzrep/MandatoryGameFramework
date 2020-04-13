@@ -2,39 +2,28 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MandatoryGame.Models
+namespace MandatoryGameFrameWork
 {
-    class Player : Entity
+    class Player : AbsEntity
     {
+        public const int MAX_PLAYER_HP = 30;
+
         public Player()
         {
-            id
-            this.hp = hp;
-            gear = new Equipment[7];
-            inventory = new List<iGameObject>();
+            idMutex.WaitOne();
+            id++;
+            Id = id;
+            idMutex.ReleaseMutex();
+
+            Hp = MAX_PLAYER_HP;
+            Gear = new AbsEquipment[7];
+            Inventory = new List<AbsItem>();
         }
 
-        public void Equip(Equipment obj)
+        public void Eat(AbsFood food)
         {
-            if (gear[obj.Slot] != null) throw new Exception("Weapon slot you are trying to use is full!");
-            gear[obj.Slot] = obj;
-            attackStat += obj.AttackStat;
-            defenseStat += obj.DefenseStat;
-        }
-
-        public void Hit(Entity enemy)
-        {
-            var statDif = AttackStat - enemy.defenseStat;
-            Random rand = new Random();
-
-            var hit = rand.Next(0, 10 + statDif);
-
-            enemy.ChangeHP(hit);
-        }
-
-        public void ChangeHP(int number)
-        {
-            hp += number;
+            Hp = Hp + food.HpValue;
+            if (Hp > MAX_PLAYER_HP) Hp = MAX_PLAYER_HP;
         }
     }
 }
