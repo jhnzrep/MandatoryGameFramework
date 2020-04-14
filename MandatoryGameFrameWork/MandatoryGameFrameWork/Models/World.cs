@@ -14,7 +14,7 @@ namespace MandatoryGameFrameWork
             Items = new List<AbsItem>();
         }
 
-        public void PopulateWorld()
+        public override void PopulateWorld()
         {
             Random rand = new Random();
 
@@ -47,7 +47,7 @@ namespace MandatoryGameFrameWork
 
         }
 
-        public void Move(Direction direction, AbsEntity entity)
+        public override void Move(Direction direction, AbsEntity entity)
         {
             int newPosX = entity.PosX;
             int newPosY = entity.PosY;
