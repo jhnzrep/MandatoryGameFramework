@@ -1,6 +1,6 @@
 ﻿namespace MandatoryGameFrameWork
 {
-    class AbsFood : AbsItem
+    abstract class AbsFood : AbsItem
     {
         public int HpValue { get; set; }
     }
