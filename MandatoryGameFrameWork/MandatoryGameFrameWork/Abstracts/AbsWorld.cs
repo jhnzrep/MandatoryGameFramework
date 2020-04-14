@@ -2,7 +2,7 @@
 
 namespace MandatoryGameFrameWork
 {
-    abstract class AbsWorld
+    public abstract class AbsWorld
     {
         public int SizeX { get; set; }
         public int SizeY { get; set; }

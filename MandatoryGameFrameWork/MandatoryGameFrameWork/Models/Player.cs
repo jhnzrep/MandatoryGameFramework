@@ -4,11 +4,11 @@ using System.Text;
 
 namespace MandatoryGameFrameWork
 {
-    class Player : AbsEntity
+    public class Player : AbsEntity
     {
         public const int MAX_PLAYER_HP = 30;
 
-        public Player()
+        public Player(int posX, int posY)
         {
             idMutex.WaitOne();
             id++;
@@ -18,6 +18,9 @@ namespace MandatoryGameFrameWork
             Hp = MAX_PLAYER_HP;
             Gear = new AbsEquipment[6];
             Inventory = new List<AbsItem>();
+
+            PosX = posX;
+            PosY = posY;
 
             EntityState = State.Alive;
         }

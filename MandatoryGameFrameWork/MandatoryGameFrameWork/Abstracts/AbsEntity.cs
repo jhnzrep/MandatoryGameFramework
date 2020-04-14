@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace MandatoryGameFrameWork
 {
-    abstract class AbsEntity: iEntity
+    public abstract class AbsEntity: iEntity
     {
         protected static int id = 0;
         protected static Mutex idMutex = new Mutex();

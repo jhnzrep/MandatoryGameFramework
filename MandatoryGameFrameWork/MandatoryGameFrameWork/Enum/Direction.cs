@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MandatoryGameFrameWork
 {
-    enum Direction
+    public enum Direction
     {
         Up, Down, Left, Right
     };

@@ -1,6 +1,6 @@
 ﻿namespace MandatoryGameFrameWork
 {
-    class Axe : AbsEquipment
+    public class Axe : AbsEquipment
     {
         public Axe()
         {

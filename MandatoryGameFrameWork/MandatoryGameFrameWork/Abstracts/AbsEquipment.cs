@@ -1,6 +1,6 @@
 ﻿namespace MandatoryGameFrameWork
 {
-    abstract class AbsEquipment : AbsItem
+    public abstract class AbsEquipment : AbsItem
     { 
         public int AttackStat { get; set; }
         public int DefenseStat { get; set; }

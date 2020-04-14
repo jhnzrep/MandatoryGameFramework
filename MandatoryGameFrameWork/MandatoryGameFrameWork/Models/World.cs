@@ -3,11 +3,10 @@ using System.Collections.Generic;
 
 namespace MandatoryGameFrameWork
 {
-    class World : AbsWorld
+    public class World : AbsWorld
     {
-        public World(int sizeX, int sizeY, int noOfMonsters, int noOfItems)
+        public World(int sizeX, int sizeY)
         {
-            if (noOfMonsters + noOfItems >= sizeX * sizeY) throw new Exception("Not enough room for GameObjects");
             SizeX = sizeX;
             SizeY = sizeY;
             Entities = new List<AbsEntity>();
