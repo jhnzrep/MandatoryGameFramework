@@ -16,8 +16,10 @@ namespace MandatoryGameFrameWork
             idMutex.ReleaseMutex();
 
             Hp = MAX_PLAYER_HP;
-            Gear = new AbsEquipment[7];
+            Gear = new AbsEquipment[6];
             Inventory = new List<AbsItem>();
+
+            EntityState = State.Alive;
         }
 
         public void Eat(AbsFood food)

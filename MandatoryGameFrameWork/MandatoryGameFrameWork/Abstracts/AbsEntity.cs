@@ -12,6 +12,8 @@ namespace MandatoryGameFrameWork
         public int Id { get; set; }
         public int Hp { get; set; }
 
+        public State EntityState { get; set; }
+
         public int PosX { get; set; }
         public int PosY { get; set; }
 
@@ -51,6 +53,8 @@ namespace MandatoryGameFrameWork
         public void ChangeHP(int number)
         {
             Hp += number;
+            if (Hp < 1) EntityState = State.Dead;
         }
+
     }
 }

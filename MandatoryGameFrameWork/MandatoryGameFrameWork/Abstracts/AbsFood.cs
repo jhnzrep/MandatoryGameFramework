@@ -2,6 +2,6 @@
 {
     class AbsFood : AbsItem
     {
-        public int HpValue { get; }
+        public int HpValue { get; set; }
     }
 }
