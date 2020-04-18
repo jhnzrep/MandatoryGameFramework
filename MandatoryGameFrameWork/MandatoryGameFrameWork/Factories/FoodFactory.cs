@@ -2,14 +2,14 @@
 
 namespace MandatoryGameFrameWork
 {
-    class FoodFactory
+    class FoodFactory : AbsFactory<AbsFood>
     {
         public FoodFactory()
         {
 
         }
 
-        public AbsFood CreateFood(int PosX, int PosY)
+        public override AbsFood CreateObject(int PosX, int PosY)
         {
             Random rand = new Random();
             int type = rand.Next(1, 2 + 1);
@@ -32,7 +32,7 @@ namespace MandatoryGameFrameWork
             return food;
         }
 
-        public AbsFood CreateEquipment(int PosX, int PosY, string type)
+        public override AbsFood CreateObject(int PosX, int PosY, string type)
         {
             AbsFood food;
 

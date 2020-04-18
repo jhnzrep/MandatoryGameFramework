@@ -2,14 +2,14 @@
 
 namespace MandatoryGameFrameWork
 {
-    class EntityFactory
+    class EntityFactory : AbsFactory<AbsEntity>
     {
         public EntityFactory()
         {
 
         }
         
-        public AbsEntity CreateEntity(int PosX, int PosY)
+        public override AbsEntity CreateObject(int PosX, int PosY)
         {
             Random rand = new Random();
             int type = rand.Next(1, 2+1);
@@ -32,7 +32,7 @@ namespace MandatoryGameFrameWork
             return entity;
         }
 
-        public AbsEntity CreateEntity(int PosX, int PosY, string type)
+        public override AbsEntity CreateObject(int PosX, int PosY, string type)
         {
             AbsEntity entity;
 

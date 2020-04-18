@@ -2,14 +2,14 @@
 
 namespace MandatoryGameFrameWork
 {
-    class EquipmentFactory
+    class EquipmentFactory : AbsFactory<AbsEquipment>
     {
         public EquipmentFactory()
         {
 
         }
 
-        public AbsEquipment CreateEquipment(int PosX, int PosY, string type)
+        public override AbsEquipment CreateObject(int PosX, int PosY, string type)
         {
             AbsEquipment equipment;
 
@@ -32,7 +32,7 @@ namespace MandatoryGameFrameWork
             return equipment;
         }
 
-        public AbsEquipment CreateEquipment(int PosX, int PosY)
+        public override AbsEquipment CreateObject(int PosX, int PosY)
         {
             Random rand = new Random();
             int type = rand.Next(1, 3+1);
