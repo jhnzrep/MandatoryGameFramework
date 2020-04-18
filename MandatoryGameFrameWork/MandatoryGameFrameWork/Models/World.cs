@@ -23,7 +23,7 @@ namespace MandatoryGameFrameWork
                 int x = rand.Next(1, SizeX + 1);
                 int y = rand.Next(1, SizeY + 1);
                 if(Entities.Find(entity => entity.PosX == x && entity.PosY == y) != null) continue;
-                Entities.Add(entityFactory.CreateEntity(x, y));
+                Entities.Add(entityFactory.CreateObject(x, y));
             }
 
             EquipmentFactory equipFactory = new EquipmentFactory();
@@ -32,7 +32,7 @@ namespace MandatoryGameFrameWork
                 int x = rand.Next(1, SizeX + 1);
                 int y = rand.Next(1, SizeY + 1);
                 if (Items.Find(entity => entity.PosX == x && entity.PosY == y) != null) continue;
-                Items.Add(equipFactory.CreateEquipment(x, y));
+                Items.Add(equipFactory.CreateObject(x, y));
             }
 
             FoodFactory foodFactory = new FoodFactory();
@@ -41,7 +41,7 @@ namespace MandatoryGameFrameWork
                 int x = rand.Next(1, SizeX + 1);
                 int y = rand.Next(1, SizeY + 1);
                 if (Items.Find(entity => entity.PosX == x && entity.PosY == y) != null) continue;
-                Items.Add(foodFactory.CreateFood(x, y));
+                Items.Add(foodFactory.CreateObject(x, y));
             }
 
         }
