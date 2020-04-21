@@ -8,6 +8,7 @@ namespace MandatoryGameFrameWork
         public int SizeY { get; set; }
         public AbsEntity Player { get; set; }
         public List<AbsEntity> Entities { get; set; }
+        public List<AbsEntity> DeadEntities { get; set; }
         public List<AbsItem> Items { get; set; }
 
         public abstract void PopulateWorld();

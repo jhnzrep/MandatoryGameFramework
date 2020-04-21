@@ -23,7 +23,6 @@ namespace MandatoryGameFrameWork
         public AbsEquipment[] Gear;
         public List<AbsItem> Inventory { get; set; }
 
-
         public void Equip(AbsEquipment obj)
         {
             if (Gear[obj.Slot] != null) throw new Exception("Weapon slot you are trying to use is full!");
@@ -40,7 +39,7 @@ namespace MandatoryGameFrameWork
             Gear[obj.Slot] = null;
         }
 
-        public void Hit(AbsEntity enemy)
+        public virtual void Hit(AbsEntity enemy)
         {
             var statDif = AttackStat - enemy.DefenseStat;
             Random rand = new Random();
@@ -56,5 +55,12 @@ namespace MandatoryGameFrameWork
             if (Hp < 1) EntityState = State.Dead;
         }
 
+        public void PickUpItem(AbsItem item)
+        {
+            if (!Distance.IsCloseEnough(this, item, 3)) throw new Exception("Item is too far!");
+            if (Inventory.Count < 30) throw new Exception("Inventory is full!");
+
+            Inventory.Add(item);
+        }
     }
 }

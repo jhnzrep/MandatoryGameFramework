@@ -10,6 +10,7 @@ namespace MandatoryGameFrameWork
             SizeX = sizeX;
             SizeY = sizeY;
             Entities = new List<AbsEntity>();
+            DeadEntities = new List<AbsEntity>();
             Items = new List<AbsItem>();
         }
 
